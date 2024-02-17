@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css" />
+    <link rel="icon" href="/static/css/faviconhb.png" type="image/x-icon" />
+  </head>
+  <header>
+    <h1 class="entete">Bonjour {{.Username}}</h1>
+    <img src="/static/css/utilisateurs2.png" />
+    <time class="datesite">{{.Date_jour}}</time>
+  </header>
+  <body>
+    <div class="login-container">
+      <h2>Page home</h2>
+      <form action="/Logout" method="post">
+        <div>Bonjour {{.Username}} vous êtes connecté !</div>
+        <div>La session exipirera dans : {{.Date_Expire}} secondes!</div>
+        <button id="subbtn" type="submit" class="bouton2">Deconnexion</button>
+      </form>
+      <form action="/AfficheUserInfo" method="post">
+      <button id="subbtn" type="submit" class="bouton3">Profil</button>
+    </form>
+    </div>
+    
+    <div class="login-container">
+      <div class="token">
+        <label for="story">Voici le token:</label>
+        <div class="CookieHolder">
+          <p class="Cookie">{{.SToken}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="login-container">Contenu du site partie privée</div>
+  </body>
+</html>
